@@ -30,10 +30,11 @@
 ## 📂 项目结构
 
 web-calculator/
-├── index.html     # 主页面结构
-├── style.css      # 样式与动画
-├── script.js      # 计算逻辑
-└── README.md      # 项目说明
+├── index.html          # 主页面结构
+├── style.css           # 样式与动画（磨砂玻璃效果）
+├── script.js           # 计算核心逻辑
+├── web-calculator.jpg  # 项目预览图
+└── README.md           # 项目说明文档
 
 ## 🤝 如何贡献
 
