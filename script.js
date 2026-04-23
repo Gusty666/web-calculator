@@ -12,7 +12,7 @@ function deleteLast() {
     display.value = display.value.slice(0, -1);
 }
 
-function calculate() {
+function calculateResult() {
     try {
         // eval 是一个简单的计算函数
         display.value = eval(display.value);
