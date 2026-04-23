@@ -2,41 +2,48 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>我的网页计算器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级科学计算器</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="background-blobs">
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
     <div class="calculator">
-        <input type="text" id="display" readonly>
+        <div class="display-container">
+            <input type="text" id="display" disabled placeholder="0">
+        </div>
         <div class="buttons">
-            <button onclick="clearDisplay()" class="operator">C</button>
-            <button onclick="deleteLast()" class="operator">DEL</button>
-            <button onclick="appendToDisplay('/')" class="operator">÷</button>
-            <button onclick="appendToDisplay('*')" class="operator">×</button>
+            <button class="btn operator" onclick="clearDisplay()">C</button>
+            <button class="btn operator" onclick="deleteLast()">DEL</button>
+            <button class="btn sci" onclick="calculateSqrt()">√</button>
+            <button class="btn operator" onclick="appendToDisplay('/')">÷</button>
             
-            <button onclick="appendToDisplay('0')" style="grid-column: span 2;">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="calculateSqrt()">√</button>
-            <button onclick="calculateFactorial()">x!</button>
-            <button onclick="calculatePower()">x²</button>
-            <button onclick="calculatePower3()">x³</button>
+            <button class="btn sci" onclick="calculateFactorial()">x!</button>
+            <button class="btn sci" onclick="calculatePower()">x²</button>
+            <button class="btn sci" onclick="calculatePower3()">x³</button>
+            <button class="btn operator" onclick="appendToDisplay('*')">×</button>
 
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('-')" class="operator">-</button>
-            
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('+')" class="operator">+</button>
-            
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="calculate()" id="equal">=</button>
-            
+            <button class="btn" onclick="appendToDisplay('7')">7</button>
+            <button class="btn" onclick="appendToDisplay('8')">8</button>
+            <button class="btn" onclick="appendToDisplay('9')">9</button>
+            <button class="btn operator" onclick="appendToDisplay('-')">-</button>
 
+            <button class="btn" onclick="appendToDisplay('4')">4</button>
+            <button class="btn" onclick="appendToDisplay('5')">5</button>
+            <button class="btn" onclick="appendToDisplay('6')">6</button>
+            <button class="btn operator" onclick="appendToDisplay('+')">+</button>
+
+            <button class="btn" onclick="appendToDisplay('1')">1</button>
+            <button class="btn" onclick="appendToDisplay('2')">2</button>
+            <button class="btn" onclick="appendToDisplay('3')">3</button>
+            <button class="btn equal" onclick="calculateResult()">=</button>
+
+            <button class="btn double" onclick="appendToDisplay('0')">0</button>
+            <button class="btn" onclick="appendToDisplay('.')">.</button>
         </div>
     </div>
     <script src="script.js"></script>

@@ -1,59 +1,103 @@
+/* 全局重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
 body {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f9;
-    font-family: Arial, sans-serif;
+    background: #e0e5ec; /* 柔和的底色 */
+    overflow: hidden;
 }
 
+/* 背景装饰球：增加视觉层次感 */
+.background-blobs {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.blob {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+}
+.blob:nth-child(1) { top: -10%; left: -10%; }
+.blob:nth-child(2) { bottom: -10%; right: -10%; background: #ff9a9e; }
+
+/* 计算器主体：磨砂玻璃效果 */
 .calculator {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px); /* 模糊背景 */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    width: 360px;
 }
 
+/* 显示屏：内凹质感 */
+.display-container {
+    margin-bottom: 20px;
+}
 #display {
     width: 100%;
-    height: 50px;
-    font-size: 24px;
-    text-align: right;
-    margin-bottom: 15px;
-    padding: 10px;
-    box-sizing: border-box;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.05);
     border: none;
-    border-radius: 5px;
-    background: #eee;
+    border-radius: 15px;
+    text-align: right;
+    padding: 0 20px;
+    font-size: 2.5rem;
+    color: #333;
+    box-shadow: inset 5px 5px 10px rgba(0,0,0,0.05);
 }
 
+/* 按钮网格 */
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 60px);
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
 }
 
-button {
-    height: 60px;
-    border-radius: 10px;
+/* 基础按钮样式 */
+.btn {
+    height: 65px;
     border: none;
-    background-color: #555;
-    color: white;
-    font-size: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.2s ease;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
 }
 
-button:hover {
-    background-color: #777;
+.btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
 }
 
-.operator {
-    background-color: #f39c12;
+.btn:active {
+    transform: translateY(1px);
 }
 
-#equal {
-    background-color: #27ae60;
-    grid-row: span 2;
-    height: 130px;
+/* 颜色分区指导 */
+.operator { background: rgba(255, 159, 67, 0.2); color: #ff9f43; } /* 橙色运算符 */
+.sci { background: rgba(72, 219, 251, 0.2); color: #0abde3; }      /* 蓝色科学键 */
+.equal { 
+    grid-row: span 2; 
+    height: auto; 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    color: white; 
 }
+.double { grid-column: span 2; }
