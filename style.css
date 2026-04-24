@@ -101,3 +101,88 @@ body {
     color: white; 
 }
 .double { grid-column: span 2; }
+
+/* ========== 响应式设计 ========== */
+
+/* 平板设备 (768px - 1024px) */
+@media screen and (max-width: 768px) {
+    .calculator {
+        width: 90%;
+        max-width: 500px;
+        padding: 20px;
+    }
+    
+    .btn {
+        height: 55px;
+        font-size: 1rem;
+    }
+    
+    #display {
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .buttons {
+        gap: 10px;
+    }
+}
+
+/* 手机设备 (小于 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        overflow-y: auto;
+        min-height: 100vh;
+    }
+    
+    .calculator {
+        width: 95%;
+        max-width: 350px;
+        padding: 15px;
+        margin: 20px auto;
+    }
+    
+    .btn {
+        height: 50px;
+        font-size: 0.95rem;
+        border-radius: 12px;
+    }
+    
+    #display {
+        height: 60px;
+        font-size: 1.8rem;
+        padding: 0 15px;
+    }
+    
+    .buttons {
+        gap: 8px;
+    }
+    
+    .blob {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* 超小屏幕 (小于 360px) */
+@media screen and (max-width: 360px) {
+    .calculator {
+        width: 98%;
+        padding: 12px;
+    }
+    
+    .btn {
+        height: 45px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+    
+    #display {
+        height: 55px;
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
+    
+    .buttons {
+        gap: 6px;
+    }
+}
