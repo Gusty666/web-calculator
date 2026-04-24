@@ -84,7 +84,3 @@ git push origin feature/YourFeature
 
 [MIT License](LICENSE) © 2026 Gusty666
 
----
-
-**用工程思维做好每一个项目** ❤️
-
