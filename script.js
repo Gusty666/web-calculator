@@ -144,22 +144,22 @@ function applyMathFunction(funcType) {
     }
 }
 
-// 开根号函数 - 现在调用通用函数
+// 开根号函数
 function calculateSqrt() {
     applyMathFunction('sqrt');
 }
 
-// 阶乘函数 - 现在调用通用函数
+// 阶乘函数
 function calculateFactorial() {
     applyMathFunction('factorial');
 }
 
-// 平方函数 - 现在调用通用函数
+// 平方函数
 function calculatePower() {
     applyMathFunction('power');
 }
 
-// 立方函数 - 现在调用通用函数
+// 立方函数
 function calculatePower3() {
     applyMathFunction('power3');
 }
